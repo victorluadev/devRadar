@@ -59,6 +59,19 @@ function App() {
     setDevs([...devs, response.data]);
   }
 
+  async function deleteDevs(id){
+    
+    const response = await api.delete('/devs', {
+      params : { 
+        _id : id
+      }
+    });  
+
+    alert(response.data.message);
+
+    setDevs(devs.filter(dev=>dev._id !== id));
+  }
+
   return (
     <div id="app">
       <aside>
@@ -91,7 +104,7 @@ function App() {
       <main>
         <ul>
           {devs.map(dev => (
-            <DevItem key={dev._id}  dev={dev} />
+            <DevItem key={dev._id}  dev={dev} toDelete={deleteDevs}/>
           )) }
         </ul>
       </main>

@@ -45,5 +45,15 @@ module.exports = {
         }
 
         response.json(dev);
+    },
+
+    async delete(request,response) {
+        const { _id } = request.query;
+
+        const { github_username } = await Dev.findByIdAndDelete(_id);
+
+        return response.json({
+            message : `${github_username} foi deletado com sucesso!`
+        });
     }
 }

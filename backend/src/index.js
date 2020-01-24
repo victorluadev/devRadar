@@ -6,7 +6,7 @@ const http = require('http')
 const routes = require('./routes.js')
 const { setupWebsocket } = require('./websocket');
 
-mongoose.connect('mongodb+srv://<username>:<password>@cluster0-ykwv9.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://victorlua:rocketseat2020@cluster0-ykwv9.mongodb.net/test?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
