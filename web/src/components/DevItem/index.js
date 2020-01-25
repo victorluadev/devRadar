@@ -19,7 +19,11 @@ export default function DevItem({ dev, toDelete }){
       </header>
       <p>{dev.bio}</p>
       <a href={`https://github.com/${dev.github_username}`}>Acessar perfil no GitHub</a>
+<<<<<<< HEAD
       <button onClick={deleteDevs}>Excluir</button>
+=======
+      <button onClick={deleteDevs}>Excluir perfil</button>
+>>>>>>> 5a34948e3c55949f52d05dcdc583c8c903d78d61
     </li>
   );
 }
